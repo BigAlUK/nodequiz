@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>Quizmaster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="style.css" media="all" rel="stylesheet" />
+    
+    <script>
+      $(function(){
+        var host = location.origin.replace(/^http/, 'ws'),
+            ws = new WebSocket(host);
+
+        ws.onmessage = function (event) {
+
+          var obj = JSON.parse(event.data);
+
+          switch(obj.type) {
+            case "players-standing-by":
+              //console.log(obj.data);
+              playersStandingBy(obj.data);
+              break;
+            case "players-answered":
+              //console.log(obj.data);
+              playersAnswered(obj.data);
+              break;
+            case "question":
+              //console.log(obj.data);
+              console.log(obj.data);
+              $('#question').html(obj.data.question);
+              break;
+            default:
+              console.log("Ooops, no message type");
+          }
+        };
+
+        $('#login').on('click', function(e) {
+          e.preventDefault();
+          ws.send(JSON.stringify({"type":"admin-login"}));
+          $('#next-question').show();
+          $(this).remove();
+        });
+
+        $('#next-question').on('click', function(e) {
+          e.preventDefault();
+          ws.send(JSON.stringify({"type":"admin-next-question"}));
+          $(this).hide();
+          $('#show-answer').show();
+          $('#players li').css('background', 'red')
+        });
+
+        $('#show-answer').on('click', function(e) {
+          e.preventDefault();
+          ws.send(JSON.stringify({"type":"admin-show-answer"}));
+          $(this).hide();
+          $('#next-question').show();
+        });
+
+        $('#show-results').on('click', function(e) {
+          e.preventDefault();
+          ws.send(JSON.stringify({"type":"admin-show-results"}));
+        });
+
+        $('#reset').on('click', function(e) {
+          e.preventDefault();
+          $('#question').html('');
+          $('#show-answer').hide();
+          $('#next-question').show();
+          ws.send(JSON.stringify({"type":"admin-reset"}));
+        });
+
+        function playersStandingBy(data) {
+          var ul = $('#players');
+
+          $('li', ul).remove();
+          
+          $.each(data, function(i, name) {
+            li = $('<li>', {"text": name.name + ' '});
+            $('<span>', {"class":"score"}).appendTo(li)
+            li.appendTo(ul)
+          });
+        }
+
+        function playersAnswered(data) {
+          console.log(data);
+          var name = $('#players li').get(data.playerIndex);
+          $(name).css('background', 'green');
+          $(name).find('.score').html(data.score)
+        }
+
+      });
+    </script>
+  </head>
+  <body class="alanmin">
+    <p>Players</p>
+    <ul id="players"></ul>
+    <h2 id="question"></h2>
+    <button id="login">Login</button>
+    <button id="next-question"  style="display:none">Next Question</button>
+    <button id="show-answer" style="display:none">Show Answer</button>
+    <button id="show-results" style="margin-top:10em;font-size:1em;background:green;">Show Results</button>
+    <button id="reset" style="margin-top:10em;font-size:0.5em;background:red">Reset</button>
+  </body>
+</html>

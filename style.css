@@ -1,0 +1,297 @@
+@import url(http://fonts.googleapis.com/css?family=News+Cycle:400,700);
+*:focus {outline: 0; } 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font: 700 1em "News Cycle", sans-serif;
+  letter-spacing: .15em;
+  color: #ff6;
+  background: #000;
+  overflow: hidden;
+  margin: 0;
+}
+.starwars section {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  z-index: 1;
+}
+.starwars .intro {
+  width: 20em;
+  margin: 0 0 0 -8em;
+  font-size: 120%;
+  font-weight: 400;
+  color: #4bd5ee;
+  opacity: 0;
+  -webkit-animation: intro 4s ease-out 1s;
+          animation: intro 4s ease-out 1s;
+}
+.starwars .logo {
+  opacity: 0;
+  -webkit-animation: logo 5s ease-out 5.5s;
+          animation: logo 5s ease-out 5.5s;
+}
+.starwars .logo svg {
+  width: inherit;
+}
+.starwars .titles {
+  width: 14.65em;
+  margin: 0 0 0 -7.325em;
+  top: auto;
+  bottom: 0;
+  height: 50em;
+  font-size: 150%;
+  text-align: justify;
+  overflow: hidden;
+  -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -ms-transform: perspective(300px) rotateX(25deg);
+  -webkit-transform: perspective(300px) rotateX(25deg);
+  transform: perspective(300px) rotateX(25deg);
+}
+.starwars .titles > div {
+  position: absolute;
+  top: 100%;
+  -webkit-animation: titles 20s linear 8s;
+          animation: titles 20s linear 8s;
+}
+.starwars .titles > div > p {
+  margin: 1.35em 0 1.85em 0;
+  line-height: 1.35em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@-webkit-keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes logo {
+  0% {
+    width: 18em;
+    margin: -9em 0 0 -9em;
+    -ms-transform: scale(2.75);
+    -webkit-transform: scale(2.75);
+    transform: scale(2.75);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    width: 18em;
+    margin: -9em 0 0 -9em;
+  }
+  100% {
+    -ms-transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0;
+    width: 18em;
+    margin: -9em 0 0 -9em;
+  }
+}
+@keyframes logo {
+  0% {
+    width: 18em;
+    margin: -9em 0 0 -9em;
+    -ms-transform: scale(2.75);
+    -webkit-transform: scale(2.75);
+    transform: scale(2.75);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    width: 18em;
+    margin: -9em 0 0 -9em;
+  }
+  100% {
+    -ms-transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0;
+    width: 18em;
+    margin: -9em 0 0 -9em;
+  }
+}
+@-webkit-keyframes titles {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 20%;
+    opacity: 0;
+  }
+}
+@keyframes titles {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 20%;
+    opacity: 0;
+  }
+}
+
+#enter-name {
+  position: absolute;
+  z-index:999;
+  opacity: 0;
+  -webkit-animation: enter-name 0.5s ease-in 28s forwards;
+          animation: enter-name 0.5s ease-in 28s forwards;
+}
+#enter-name form {
+  width: 80%;
+  margin: 10% auto;
+}
+
+#enter-name form input {
+  display: block;
+  font-size: 3em;
+  color: #4bd5ee;
+  width:100%;
+  margin:0 0 0.5em 0;
+  background:#000;
+  border: 2px solid #4bd5ee;
+  border-radius: 0.3em;
+  padding: 0.3em;
+}
+
+#enter-name form input[type='submit'] {
+  font-size: 2em;
+  color: #4bd5ee;
+}
+
+@-webkit-keyframes enter-name {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes enter-name {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+h1 {
+  background: #ff6;
+  color: #000;
+  font-size: 1em;
+  padding: 0.25em 0.5em;
+  margin:0;
+}
+h2 {
+  font-size: 1.2em;
+  line-height: 1.25em;
+  padding: 0 0.5em;
+  margin: 0.5em 0;
+}
+#standing-by {
+  font-family: "Courier New", monospace;
+  padding: 0.5em;
+}
+#standing-by ul {
+  margin: 0;
+  padding: 0;
+  list-style:none;
+}
+#standing-by ul li {
+  margin: 0;
+  padding: 0;
+  color: #4bd5ee;
+  list-style:none;
+}
+
+#q-image {
+  background-position: center center;
+  background-size: cover; 
+  margin: 0 0.5em;
+  height: 30%;
+}
+#q-answers {
+  margin: 0;
+  padding: 0.75em 0 0 0;
+  list-style:none; 
+}
+#q-answers li {
+  margin: 0 0.5em 0.75em 0.5em;
+  padding: 0.75em 0.5em;
+  color: #4bd5ee;
+  list-style: none;
+  display: block;
+  background: black;
+  border: 2px solid #4bd5ee;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+table.results {
+  width:100%;
+  border-collapse: collapse;
+}
+
+table.results th {
+  padding:0.5em;
+  background: #ff6;
+  color: #000;
+  text-align:left;
+}
+table.results td {
+  padding: 0.5em;
+  border-bottom: 2px solid #4bd5ee;
+  color: #4bd5ee;
+}
+
+.alanmin {
+  padding:0.5em;
+}
+.alanmin ul {
+  margin: 0 0 1em 0;
+  padding: 0;
+  list-style:none;
+}
+.alanmin ul li {
+  margin: 0.25em;
+  padding: 0.5em;
+  background: red;
+  display: inline-block;
+  width:20%;
+}
+.alanmin button {
+  display:block;
+  font-size:1.5em;
+  border:0;
+  padding:1em;
+  width:100%;
+  margin: 0 0 1em 0;
+}
