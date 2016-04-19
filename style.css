@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=News+Cycle:400,700);
-*:focus {outline: 0; } 
+*:focus {outline: 0; }
 html,
 body {
   width: 100%;
@@ -11,7 +11,7 @@ body {
   overflow: hidden;
   margin: 0;
 }
-.starwars section {
+/*.starwars section {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -164,12 +164,12 @@ body {
     top: 20%;
     opacity: 0;
   }
-}
+}*/
 
 #enter-name {
   position: absolute;
   z-index:999;
-  opacity: 0;
+  opacity: 1;
   -webkit-animation: enter-name 0.5s ease-in 28s forwards;
           animation: enter-name 0.5s ease-in 28s forwards;
 }
@@ -195,14 +195,14 @@ body {
   color: #4bd5ee;
 }
 
-@-webkit-keyframes enter-name {
+/*@-webkit-keyframes enter-name {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 @keyframes enter-name {
     from { opacity: 0; }
     to   { opacity: 1; }
-}
+}*/
 h1 {
   background: #ff6;
   color: #000;
@@ -234,14 +234,14 @@ h2 {
 
 #q-image {
   background-position: center center;
-  background-size: cover; 
+  background-size: cover;
   margin: 0 0.5em;
   height: 30%;
 }
 #q-answers {
   margin: 0;
   padding: 0.75em 0 0 0;
-  list-style:none; 
+  list-style:none;
 }
 #q-answers li {
   margin: 0 0.5em 0.75em 0.5em;

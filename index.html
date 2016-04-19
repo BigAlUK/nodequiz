@@ -109,11 +109,11 @@
         function showResults(data) {
           var tbl = $('<table>', {"class":"results"}),
               header = $('<tr>');
-          
+
           $('<th>', {"text": 'Name' }).appendTo(header);
           $('<th>', {"text": 'Score' }).appendTo(header);
-          header.appendTo(tbl);    
-          
+          header.appendTo(tbl);
+
           $.each(data, function(i, result) {
             row = $('<tr>')
             nameCell = $('<td>', {"text": result.name }).appendTo(row);
@@ -128,24 +128,24 @@
     </script>
   </head>
   <body>
-  
-    <article class="starwars">
-       
+
+    <!-- <article class="starwars">
+
       <div class="animation">
-        
+
         <section class="intro">
           A few minutes ago, in a cinema<br>not so far, far away....
         </section>
-          
+
         <section class="titles">
-          <div contenteditable="true" spellcheck="false"> 
+          <div contenteditable="true" spellcheck="false">
             <p style="text-align:center;">
               KYAN CHRISTMAS 2015
             </p>
 
             <p>
               It is a period of festive cheer.
-              Al has gone mental again trying to 
+              Al has gone mental again trying to
               over-engineer a simple quiz.
             </p>
 
@@ -165,7 +165,7 @@
             </p>
             </div>
         </section>
-        
+
         <section class="logo">
         <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              width="693.615px" height="419.375px" viewBox="0 0 693.615 419.375" enable-background="new 0 0 693.615 419.375"
@@ -255,10 +255,10 @@
             </g>
           </g>
           </svg>
-        
+
         </section>
       </div>
-    </article>
+    </article> -->
 
     <div id="enter-name">
       <form id="name-form">
